@@ -1,0 +1,91 @@
+#map-wrapper {
+  font-size: 1px;
+  position: relative;
+  overflow: scroll;
+  width: 100vw;
+  height: 100vh;
+}
+#map {
+  width: 10000px;
+  height: 10000px;
+}
+#map img {
+  width: 500px;
+  height: 500px;
+  user-select: none;
+}
+.small #map-wrapper {
+  font-size: 0.5px;
+}
+.small #map {
+  width: 5000px;
+  height: 5000px;
+}
+.small #map img {
+  width: 250px;
+  height: 250px;
+  outline: 1px solid black;
+}
+.point {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  border-radius: 16px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.point:hover::before, .show-name .point::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -32px;
+  transform: translateX(calc(-50% + 14px));
+  width: max-content;
+  background: #3b3b3b;
+  color: white;
+  font-family: '微軟正黑體';
+  font-size: 16px;
+  line-height: 16px;
+  padding: 4px;
+  border-radius: 4px;
+}
+.point-editor {
+  width: 320px;
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  z-index: 100;
+}
+.points-list {
+  position: fixed;
+  width: 320px;
+  height: 90vh;
+  top: 16px;
+  left: calc(100vw - 24px - 320px);
+  display: flex;
+  flex-direction: column;
+}
+.points-list .item {
+  cursor: pointer;
+  display: flex;
+}
+.points-list .item .icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  margin-right: 4px;
+}
+.points-list .item:hover {
+  background-color: #bbbbbb;
+}
+.points-list .list {
+  flex: 1;
+}
+.points-list .colors {
+  display: flex;
+}
+.points-list .color {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  margin-right: 4px;
+}
