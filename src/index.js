@@ -90,7 +90,7 @@ const objects = JSON.parse(localStorage.getItem('mapDatas')) || []
   window.getColorsAndSearched = (points, search) => {
     let result = []
     let colors = []
-    points.sort((e) => (e.name)).forEach((e) => {
+    points.sort((a, b) => (b.color < a.color ? 1 : -1)).forEach((e) => {
       if (colors.length < 10 && !colors.includes(e.color)) {
         colors.push(e.color)
       }

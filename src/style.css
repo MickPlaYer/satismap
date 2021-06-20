@@ -47,6 +47,7 @@
   line-height: 16px;
   padding: 4px;
   border-radius: 4px;
+  z-index: 100;
 }
 .point-editor {
   width: 320px;
